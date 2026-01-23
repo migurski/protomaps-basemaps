@@ -8,7 +8,7 @@ Start by building tiles/data/monaco.pmtiles:
 
     cd tiles
     mvn clean package -DskipTests
-    java -jar target/*-with-deps.jar --download --area=monaco --force
+    java -jar target/*-with-deps.jar --download --area=four-corners --force --maxzoom=6
     cd -
 
 Generate styles/style.json with sprites and fonts in a local basemaps-assets directory:
@@ -71,7 +71,7 @@ Run local web server to view http://localhost:8080/examples/local.html:
                 // Replace the source URL with the local PMTiles file
                 style.sources.protomaps = {
                     type: "vector",
-                    url: "pmtiles://../tiles/monaco.pmtiles",
+                    url: "pmtiles://../tiles/four-corners.pmtiles",
                     attribution: style.sources.protomaps.attribution
                 };
 
@@ -79,8 +79,8 @@ Run local web server to view http://localhost:8080/examples/local.html:
                 const map = new maplibregl.Map({
                     container: 'map',
                     style: style,
-                    center: [7.41488, 43.73019], // Monaco [longitude, latitude]
-                    zoom: 16,
+                    center: [76.56, 33.92], // Kashmir [longitude, latitude]
+                    zoom: 5,
                     hash: true // Allows sharing location via URL hash
                 });
 

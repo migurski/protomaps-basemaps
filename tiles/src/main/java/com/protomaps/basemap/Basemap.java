@@ -214,9 +214,9 @@ public class Basemap extends ForwardingProfile {
     var planetiler = Planetiler.create(args)
       .addNaturalEarthSource("ne", nePath, neUrl)
       .addOsmSource("osm", Path.of("data", "sources", area + ".osm.pbf"), "geofabrik:" + area)
-      .addShapefileSource("osm_water", sourcesDir.resolve("water-polygons-split-3857.zip"),
+      .addGeoPackageSource("osm_water", sourcesDir.resolve("triangle-water.gpkg"),
         "https://osmdata.openstreetmap.de/download/water-polygons-split-3857.zip")
-      .addShapefileSource("osm_land", sourcesDir.resolve("land-polygons-split-3857.zip"),
+      .addGeoPackageSource("osm_land", sourcesDir.resolve("triangle-land.gpkg"),
         "https://osmdata.openstreetmap.de/download/land-polygons-split-3857.zip")
       .addGeoPackageSource("landcover", sourcesDir.resolve("daylight-landcover.gpkg"),
         "https://r2-public.protomaps.com/datasets/daylight-landcover.gpkg");
